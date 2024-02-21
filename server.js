@@ -7,8 +7,8 @@ const db = knex({
     client: 'pg',
     connection: {
         host: '127.0.0.1',
-        user: 'eric',
-        password: 'tr33house',
+        user: 'your_username',
+        password: 'your_password',
         database: 'smart-brain'
     }
 })
