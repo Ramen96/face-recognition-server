@@ -1,5 +1,13 @@
 const handleRegister = (req, res, db, bcrypt) => {
+    // importing state from server.js
     const { email, name, password } = req.body;
+
+    // if this is true respond with status 400
+    if (!email || !name || !password) {
+        return res.status(400).json('incorrect form submission');
+    }
+
+    // hash password
     const hash = bcrypt.hashSync(password);
     db.transaction(trx => {
         trx.insert({
